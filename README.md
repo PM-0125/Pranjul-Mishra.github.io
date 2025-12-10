@@ -31,7 +31,7 @@ Workflow `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `
 
 ## View the site
 Once Pages is enabled and a build has run, the site will be available at:
-- https://pranjul-mishra.github.io
+- https://pm-0125.github.io/Pranjul-Mishra.github.io/
 
 ## Owner TODO
 - Update Formspree endpoint in `src/pages/index.astro` (`action="https://formspree.io/f/YOUR_FORM_ID"`).

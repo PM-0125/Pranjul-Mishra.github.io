@@ -1,5 +1,5 @@
+---
 import {
-  hero,
   research,
   projects,
   experience,
@@ -12,13 +12,28 @@ import {
 } from '../data/content';
 import '../styles/global.css';
 
+const hero = {
+  name: 'Pranjul Mishra',
+  role: 'Research Software Engineer',
+  location: 'Warsaw, Poland',
+  focus: 'Credible AI / RAG / Research Software',
+  bio: 'I turn research into reliable AI tools: tested Python libraries, CI/CD, reproducible ML, and clinical/BioXAI RAG utilities.',
+  email: 'pranjulmishra228161@gmail.com',
+  calendly: 'https://calendly.com/anjananandan0125',
+  github: 'https://github.com/PM-0125',
+  scholar: 'https://scholar.google.com/citations?user=MrgWFs8AAAAJ&hl=en&authuser=1',
+  linkedin: 'https://www.linkedin.com/in/pranjul-mishra/',
+  orcid: 'https://orcid.org/my-orcid?orcid=0009-0003-5503-1314',
+  youtube: 'https://www.youtube.com/@AnjanaNandan0125'
+};
+---
 
 <!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{hero.name} | {hero.role}</title>
+    <title>{hero.name} - {hero.role}</title>
     <meta
       name="description"
       content="Portfolio of Pranjul Mishra — Research Software Engineer focused on credible AI, LLM apps, and reproducible ML."
@@ -28,7 +43,7 @@ import '../styles/global.css';
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><circle cx=%2750%27 cy=%2750%27 r=%2740%27 fill=%27%2322d3ee%27/><circle cx=%2745%27 cy=%2740%27 r=%2710%27 fill=%27%23e879f9%27/></svg>"
     />
-    <meta property="og:title" content={`${hero.name} | ${hero.role}`} />
+    <meta property="og:title" content={`${hero.name} - ${hero.role}`} />
     <meta property="og:description" content="Credible AI, RAG, reproducible ML, and research software engineering." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pranjul-mishra.github.io/" />
@@ -62,7 +77,7 @@ import '../styles/global.css';
         <div class="hero-grid">
           <div class="hero-text">
             <p class="eyebrow">{hero.location} · {hero.focus}</p>
-            <h1>Hi, I’m {hero.name}.</h1>
+            <h1>Hi, I'm {hero.name}.</h1>
             <p class="lead">{hero.bio}</p>
             <div class="cta-row">
               <a class="btn primary" href={`mailto:${hero.email}`}>Email</a>
@@ -337,4 +352,3 @@ import '../styles/global.css';
     </script>
   </body>
 </html>
-

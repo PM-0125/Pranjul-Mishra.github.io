@@ -1,0 +1,17 @@
+{
+  "name": "pranjul-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.16.4",
+    "fuse.js": "^6.6.2"
+  }
+}

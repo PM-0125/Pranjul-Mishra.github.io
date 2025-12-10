@@ -1,0 +1,341 @@
+---
+import {
+  hero,
+  research,
+  projects,
+  experience,
+  publications,
+  education,
+  skills,
+  achievements,
+  blogPosts,
+  navSections
+} from '../data/content';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{hero.name} | {hero.role}</title>
+    <meta
+      name="description"
+      content="Portfolio of Pranjul Mishra — Research Software Engineer focused on credible AI, LLM apps, and reproducible ML."
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><circle cx=%2750%27 cy=%2750%27 r=%2740%27 fill=%27%2322d3ee%27/><circle cx=%2745%27 cy=%2740%27 r=%2710%27 fill=%27%23e879f9%27/></svg>"
+    />
+    <meta property="og:title" content={`${hero.name} | ${hero.role}`} />
+    <meta property="og:description" content="Credible AI, RAG, reproducible ML, and research software engineering." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pranjul-mishra.github.io/" />
+    <meta property="og:image" content="https://pranjul-mishra.github.io/og-preview.png" />
+  </head>
+  <body>
+    <canvas id="stars"></canvas>
+    <aside class="side-nav">
+      <div class="brand">
+        <div class="planet"></div>
+        <div>
+          <div class="brand-name">{hero.name}</div>
+          <div class="brand-role">{hero.role}</div>
+        </div>
+      </div>
+      <nav id="toc">
+        {navSections.map((s) => (
+          <a href={`#${s.id}`}>{s.label}</a>
+        ))}
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="ghost">Toggle theme</button>
+        <select id="lang-select" aria-label="Language">
+          <option value="en" selected>EN</option>
+        </select>
+      </div>
+    </aside>
+
+    <main>
+      <section id="hero" class="panel">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow">{hero.location} · {hero.focus}</p>
+            <h1>Hi, I’m {hero.name}.</h1>
+            <p class="lead">{hero.bio}</p>
+            <div class="cta-row">
+              <a class="btn primary" href={`mailto:${hero.email}`}>Email</a>
+              <a class="btn primary" href={hero.calendly} target="_blank" rel="noopener">Calendly</a>
+              <a class="btn ghost" href="/PRANJULMISHRA_CV.pdf" download>Download CV</a>
+              <a class="btn ghost" href={hero.github} target="_blank" rel="noopener">GitHub</a>
+              <a class="btn ghost" href={hero.scholar} target="_blank" rel="noopener">Scholar</a>
+            </div>
+            <div class="socials">
+              <a href={hero.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+              <a href={hero.github} target="_blank" rel="noopener">GitHub</a>
+              <a href={hero.orcid} target="_blank" rel="noopener">ORCID</a>
+              <a href={hero.scholar} target="_blank" rel="noopener">Scholar</a>
+              <a href={hero.youtube} target="_blank" rel="noopener">YouTube</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="planetary-illustration">
+              <div class="orbit orbit-1"></div>
+              <div class="orbit orbit-2"></div>
+              <div class="planet-core"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="panel">
+        <header><h2>Research & Open Source</h2><p>Credible AI, BioXAI, reproducible ML, and clinical RAG utilities.</p></header>
+        <div class="grid">
+          {research.map((item) => (
+            <details class="planet-tile">
+              <summary class="planet-summary">
+                <div class={`planet-3d planet-${item.planet || 'earth'}`}>
+                  {item.planet === 'saturn' && <span class="planet-rings"></span>}
+                </div>
+                <div class="planet-meta">
+                  <p class="eyebrow">{item.location || 'Planet'}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.summary}</p>
+                </div>
+              </summary>
+              <div class="planet-body">
+                {item.links && (
+                  <div class="planet-links">
+                    {item.links.map((l) => (
+                      <a class="btn ghost" href={l.href} target="_blank" rel="noopener">{l.label}</a>
+                    ))}
+                  </div>
+                )}
+                <p>{item.readme || item.summary}</p>
+                <div class="tags">{item.tags.map((t) => <span class="tag">{t}</span>)}</div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" class="panel">
+        <header><h2>Projects</h2><p>Selected builds and experiments.</p></header>
+        <div class="grid">
+          {projects.map((p) => (
+            <article class="card">
+              <h3>{p.title}</h3>
+              <p>{p.summary}</p>
+              <div class="tags">{p.tags.map((t) => <span class="tag">{t}</span>)}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="experience" class="panel">
+        <header><h2>Experience</h2></header>
+        <div class="timeline">
+          {experience.map((e) => (
+            <div class="item">
+              <div class="eyebrow">{e.org} · {e.location}</div>
+              <h3>{e.role}</h3>
+              <p>{e.dates}</p>
+              <ul>{e.bullets.map((b) => <li>{b}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="publications" class="panel">
+        <header><h2>Publications & Talks</h2></header>
+        <ul class="list">
+          {publications.map((p) => <li>{p}</li>)}
+        </ul>
+      </section>
+
+      <section id="education" class="panel">
+        <header><h2>Education</h2></header>
+        <ul class="list">
+          {education.map((e) => <li>{e}</li>)}
+        </ul>
+      </section>
+
+      <section id="skills" class="panel">
+        <header><h2>Skills</h2></header>
+        <div class="skills">
+          {skills.map((s) => (
+            <div class="skill-group">
+              <strong>{s.title}</strong>
+              <p>{s.items.join(', ')}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="achievements" class="panel">
+        <header><h2>Achievements & Certifications</h2></header>
+        <ul class="list">
+          {achievements.map((a) => <li>{a}</li>)}
+        </ul>
+      </section>
+
+      <section id="blog" class="panel">
+        <header><h2>Blog & Updates</h2><p>On-site posts and featured YouTube content.</p></header>
+        <div class="search-row">
+          <input id="search-input" type="search" placeholder="Search posts..." aria-label="Search posts" />
+          <button id="search-clear" class="ghost">Clear</button>
+        </div>
+        <div id="blog-list" class="grid"></div>
+        <a class="btn ghost" href={hero.youtube} target="_blank" rel="noopener">YouTube Channel</a>
+      </section>
+
+      <section id="contact" class="panel">
+        <header><h2>Contact</h2><p>Email or schedule time; forms route via Formspree (update endpoint when ready).</p></header>
+        <div class="contact-grid">
+          <div>
+            <p>Email: <a href={`mailto:${hero.email}`}>{hero.email}</a></p>
+            <p>Calendly: <a href={hero.calendly} target="_blank" rel="noopener">calendly.com/anjananandan0125</a></p>
+            <p>Location: Warsaw, Poland (CET)</p>
+            <div class="socials">
+              <a href={hero.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+              <a href={hero.github} target="_blank" rel="noopener">GitHub</a>
+              <a href={hero.scholar} target="_blank" rel="noopener">Scholar</a>
+              <a href={hero.orcid} target="_blank" rel="noopener">ORCID</a>
+            </div>
+          </div>
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label>Name <input name="name" required /></label>
+            <label>Email <input type="email" name="email" required /></label>
+            <label>Message <textarea name="message" rows="4" required></textarea></label>
+            <button type="submit" class="btn primary">Send</button>
+            <p class="form-note">Replace Formspree endpoint later if needed (Resend, etc.).</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script type="module">
+      import { blogPosts, navSections } from '/src/data/content.ts';
+
+      const blogList = document.getElementById('blog-list');
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+
+      const fuse = new Fuse(blogPosts, { keys: ['title', 'summary', 'tags'], threshold: 0.35 });
+
+      const renderPosts = (posts) => {
+        blogList.innerHTML = posts.map((p) => `
+          <article class="card">
+            <h3>${p.title}</h3>
+            <p class="eyebrow">${p.date}</p>
+            <p>${p.summary}</p>
+            <div class="tags">${p.tags.map((t) => `<span class="tag">${t}</span>`).join('')}</div>
+          </article>
+        `).join('');
+      };
+
+      renderPosts(blogPosts);
+
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.trim();
+        if (!q) return renderPosts(blogPosts);
+        const results = fuse.search(q).map((r) => r.item);
+        renderPosts(results);
+      });
+
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        renderPosts(blogPosts);
+      });
+
+      // TOC active state
+      const toc = document.getElementById('toc');
+      const links = toc.querySelectorAll('a');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+            const link = toc.querySelector(`a[href="#${id}"]`);
+            if (entry.isIntersecting) {
+              links.forEach((l) => l.classList.remove('active'));
+              link?.classList.add('active');
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      navSections.forEach((s) => {
+        const el = document.getElementById(s.id);
+        if (el) observer.observe(el);
+      });
+
+      // Theme toggle with persistence
+      const themeToggle = document.getElementById('theme-toggle');
+      const preferred = localStorage.getItem('theme') || 'dark';
+      document.documentElement.dataset.theme = preferred;
+
+      themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = current;
+        localStorage.setItem('theme', current);
+      });
+
+      // Particles
+      const canvas = document.getElementById('stars');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
+      resize();
+      window.addEventListener('resize', resize);
+
+      const initParticles = () => {
+        particles = Array.from({ length: 120 }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.6 + 0.4,
+          s: Math.random() * 0.4 + 0.2
+        }));
+      };
+      initParticles();
+
+      const draw = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(255,255,255,0.8)';
+        particles.forEach((p) => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+          p.y += p.s;
+          if (p.y > canvas.height) p.y = 0;
+        });
+        requestAnimationFrame(draw);
+      };
+      draw();
+
+      // Service worker
+      if (!import.meta.env.DEV && 'serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+
+      // Allow only one planet tile open at a time
+      const planetTiles = Array.from(document.querySelectorAll('details.planet-tile'));
+      planetTiles.forEach((tile) => {
+        tile.addEventListener('toggle', () => {
+          if (tile.open) {
+            planetTiles.forEach((other) => {
+              if (other !== tile) other.removeAttribute('open');
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+

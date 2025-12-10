@@ -1,0 +1,16 @@
+{
+  "name": "Pranjul Mishra Portfolio",
+  "short_name": "Pranjul",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1021",
+  "theme_color": "#0b1021",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAhUlEQVR4nO3ZQQ6AIAwF0PM/tczRCwqGVtCXS6DgyZxbLQGFXMw8MjIIs9JpFZWsCC21SxiRdAcKZngcN5hApZqV2ES7kZ1ZbiRhFV4HD78K+RFDqBAlQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQChQCjQBXxUQAULt37NsAAAAASUVORK5CYII=",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
+

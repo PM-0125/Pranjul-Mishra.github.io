@@ -31,9 +31,9 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.06), transparent 25%),
-              radial-gradient(circle at 80% 10%, rgba(232, 121, 249, 0.08), transparent 25%),
-              var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.06), transparent 25%),
+                    radial-gradient(circle at 80% 10%, rgba(232, 121, 249, 0.08), transparent 25%);
   color: var(--text);
   min-height: 100vh;
   display: grid;

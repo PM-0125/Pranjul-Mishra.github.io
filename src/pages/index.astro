@@ -316,39 +316,44 @@ const hero = {
 
       // Particles
       const canvas = document.getElementById('stars');
-      const ctx = canvas.getContext('2d');
-      let particles = [];
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
 
-      const resize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      };
-      resize();
-      window.addEventListener('resize', resize);
+        const resize = () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          initParticles();
+        };
+        resize();
+        window.addEventListener('resize', resize);
 
-      const initParticles = () => {
-        particles = Array.from({ length: 120 }, () => ({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 1.6 + 0.4,
-          s: Math.random() * 0.4 + 0.2
-        }));
-      };
-      initParticles();
+        const initParticles = () => {
+          particles = Array.from({ length: 150 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 1.8 + 0.5,
+            s: Math.random() * 0.5 + 0.2
+          }));
+        };
 
-      const draw = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'rgba(255,255,255,0.8)';
-        particles.forEach((p) => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fill();
-          p.y += p.s;
-          if (p.y > canvas.height) p.y = 0;
-        });
-        requestAnimationFrame(draw);
-      };
-      draw();
+        const draw = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach((p) => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${0.7 + p.r * 0.15})`;
+            ctx.fill();
+            p.y += p.s;
+            if (p.y > canvas.height) {
+              p.y = 0;
+              p.x = Math.random() * canvas.width;
+            }
+          });
+          requestAnimationFrame(draw);
+        };
+        draw();
+      }
 
       // Service worker
       if (!import.meta.env.DEV && 'serviceWorker' in navigator) {

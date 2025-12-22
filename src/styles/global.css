@@ -217,7 +217,6 @@ select {
   border-radius: 10px;
   border: 1px solid var(--card-border);
   background: var(--card);
-  color: var(--text);
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -232,6 +231,11 @@ select {
 .socials a svg {
   width: 20px;
   height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.socials a:hover svg {
+  transform: scale(1.1);
 }
 
 .hero-grid {

@@ -237,9 +237,9 @@ const hero = {
             </div>
           </div>
           <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <label>Name <input name="name" required /></label>
-            <label>Email <input type="email" name="email" required /></label>
-            <label>Message <textarea name="message" rows="4" required></textarea></label>
+            <label>Name <input name="name" autocomplete="name" required /></label>
+            <label>Email <input type="email" name="email" autocomplete="email" required /></label>
+            <label>Message <textarea name="message" rows="4" autocomplete="off" required></textarea></label>
             <button type="submit" class="btn primary">Send</button>
             <p class="form-note">Replace Formspree endpoint later if needed (Resend, etc.).</p>
           </form>
@@ -248,8 +248,7 @@ const hero = {
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-    <script type="module">
-      import { blogPosts, navSections } from '/src/data/content.ts';
+    <script type="module" define:vars={{ blogPosts, navSections }}>
 
       const blogList = document.getElementById('blog-list');
       const searchInput = document.getElementById('search-input');

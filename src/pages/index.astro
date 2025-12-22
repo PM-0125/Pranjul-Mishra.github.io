@@ -315,57 +315,69 @@ const hero = {
       });
 
       // Particles - Stars animation
-      const initStars = () => {
+      (() => {
         const canvas = document.getElementById('stars');
-        if (!canvas) return;
+        if (!canvas) {
+          console.warn('Stars canvas not found');
+          return;
+        }
         
         const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+        if (!ctx) {
+          console.warn('Could not get 2D context');
+          return;
+        }
         
         let particles = [];
+        let animationId = null;
 
         const resize = () => {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
+          const dpr = window.devicePixelRatio || 1;
+          canvas.width = window.innerWidth * dpr;
+          canvas.height = window.innerHeight * dpr;
+          ctx.scale(dpr, dpr);
+          canvas.style.width = window.innerWidth + 'px';
+          canvas.style.height = window.innerHeight + 'px';
           initParticles();
         };
 
         const initParticles = () => {
-          particles = Array.from({ length: 200 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 2 + 0.8,
-            s: Math.random() * 0.6 + 0.3
+          particles = Array.from({ length: 250 }, () => ({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            r: Math.random() * 2.5 + 0.5,
+            s: Math.random() * 0.8 + 0.2
           }));
         };
 
         const draw = () => {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
           particles.forEach((p) => {
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + p.r * 0.1})`;
+            const opacity = Math.min(1, 0.7 + p.r * 0.12);
+            ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
             ctx.fill();
             p.y += p.s;
-            if (p.y > canvas.height) {
+            if (p.y > window.innerHeight) {
               p.y = 0;
-              p.x = Math.random() * canvas.width;
+              p.x = Math.random() * window.innerWidth;
             }
           });
-          requestAnimationFrame(draw);
+          animationId = requestAnimationFrame(draw);
         };
 
+        // Initialize
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener('resize', () => {
+          resize();
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+          draw();
+        });
         draw();
-      };
-
-      // Initialize stars after DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initStars);
-      } else {
-        initStars();
-      }
+      })();
 
       // Service worker
       if (!import.meta.env.DEV && 'serviceWorker' in navigator) {

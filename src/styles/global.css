@@ -83,12 +83,19 @@ a {
   align-items: center;
 }
 
-.planet {
+.profile-photo {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  box-shadow: 0 0 0 8px rgba(34, 211, 238, 0.12);
+  object-fit: cover;
+  border: 2px solid var(--card-border);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.12);
+  transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.25), 0 0 20px rgba(34, 211, 238, 0.3);
+  transform: scale(1.05);
 }
 
 .brand-name {

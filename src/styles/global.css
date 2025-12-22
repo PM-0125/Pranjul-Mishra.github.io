@@ -48,7 +48,7 @@ main {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 h1, h2, h3, h4 {
@@ -78,7 +78,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .brand {
@@ -517,8 +517,11 @@ input, textarea {
 
 canvas#stars {
   position: fixed;
-  inset: 0;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   pointer-events: none;
 }
 

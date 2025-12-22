@@ -314,10 +314,14 @@ const hero = {
         localStorage.setItem('theme', current);
       });
 
-      // Particles
-      const canvas = document.getElementById('stars');
-      if (canvas) {
+      // Particles - Stars animation
+      const initStars = () => {
+        const canvas = document.getElementById('stars');
+        if (!canvas) return;
+        
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        
         let particles = [];
 
         const resize = () => {
@@ -325,15 +329,13 @@ const hero = {
           canvas.height = window.innerHeight;
           initParticles();
         };
-        resize();
-        window.addEventListener('resize', resize);
 
         const initParticles = () => {
-          particles = Array.from({ length: 150 }, () => ({
+          particles = Array.from({ length: 200 }, () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            r: Math.random() * 1.8 + 0.5,
-            s: Math.random() * 0.5 + 0.2
+            r: Math.random() * 2 + 0.8,
+            s: Math.random() * 0.6 + 0.3
           }));
         };
 
@@ -342,7 +344,7 @@ const hero = {
           particles.forEach((p) => {
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${0.7 + p.r * 0.15})`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + p.r * 0.1})`;
             ctx.fill();
             p.y += p.s;
             if (p.y > canvas.height) {
@@ -352,7 +354,17 @@ const hero = {
           });
           requestAnimationFrame(draw);
         };
+
+        resize();
+        window.addEventListener('resize', resize);
         draw();
+      };
+
+      // Initialize stars after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initStars);
+      } else {
+        initStars();
       }
 
       // Service worker

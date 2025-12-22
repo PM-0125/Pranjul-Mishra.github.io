@@ -205,7 +205,33 @@ select {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  font-size: 14px;
+  margin-top: 16px;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socials a:hover {
+  border-color: var(--primary);
+  background: rgba(34, 211, 238, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.2);
+}
+
+.socials a svg {
+  width: 20px;
+  height: 20px;
 }
 
 .hero-grid {

@@ -5,6 +5,7 @@ import {
   experience,
   publications,
   education,
+  certifications,
   skills,
   achievements,
   blogPosts,
@@ -17,6 +18,7 @@ import Planet3D from '../components/Planet3D';
 import AcademicVisual from '../components/AcademicVisual';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import PublicationsVisualization from '../components/PublicationsVisualization';
+import EducationVisualization from '../components/EducationVisualization';
 
 const hero = {
   name: 'Pranjul Mishra',
@@ -264,9 +266,105 @@ const hero = {
 
       <section id="education" class="panel">
         <header><h2>Education</h2></header>
-        <ul class="list">
-          {education.map((e) => <li>{e}</li>)}
-        </ul>
+        
+        <!-- 3D Graduation Visual -->
+        <EducationVisualization client:load />
+        
+        <div class="education-grid">
+          {education.map((edu) => (
+            <div class="education-card">
+              <div class="education-header">
+                <span class={`edu-status-badge ${edu.status}`}>
+                  {edu.status === 'completed' ? '✓ Completed' : '📚 In Progress'}
+                </span>
+                <span class="edu-dates">{edu.startDate} – {edu.endDate}</span>
+              </div>
+              
+              <h3>{edu.degree}</h3>
+              <p class="edu-field">{edu.field}</p>
+              {edu.specialization && <p class="edu-spec">Specialization: {edu.specialization}</p>}
+              
+              <div class="education-meta">
+                <p class="edu-institution">🎓 {edu.institution}</p>
+                <p class="edu-location">📍 {edu.location}</p>
+              </div>
+              
+              <div class="gpa-display">
+                <span class="gpa-label">GPA:</span>
+                <span class="gpa-score">{edu.gpa}/{edu.gpaScale}</span>
+                <span class="gpa-grade">({edu.grade})</span>
+              </div>
+              
+              {(edu.thesis || edu.coursework) && (
+                <details class="coursework-details">
+                  <summary>📚 Academic Details</summary>
+                  <div class="coursework-content">
+                    {edu.thesis && (
+                      <div class="thesis-info">
+                        <strong>Thesis:</strong>
+                        <p>{edu.thesis.title}</p>
+                        <span class="thesis-status">{edu.thesis.status}</span>
+                      </div>
+                    )}
+                    {edu.coursework && (
+                      <div class="coursework-list">
+                        <strong>Relevant Coursework:</strong>
+                        <ul>
+                          {edu.coursework.map((course) => <li>{course}</li>)}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </details>
+              )}
+              
+              {(edu.honors || edu.achievements || edu.activities) && (
+                <div class="achievements-section">
+                  {edu.honors && edu.honors.length > 0 && (
+                    <div class="honors-list">
+                      <strong>🏆 Honors:</strong>
+                      {edu.honors.map((honor) => <span class="honor-badge">{honor}</span>)}
+                    </div>
+                  )}
+                  {edu.achievements && edu.achievements.length > 0 && (
+                    <div class="achievements-list">
+                      <strong>🎯 Achievements:</strong>
+                      <ul>
+                        {edu.achievements.map((ach) => <li>{ach}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                  {edu.activities && edu.activities.length > 0 && (
+                    <div class="activities-list">
+                      <strong>📌 Activities:</strong>
+                      {edu.activities.map((act) => <span class="activity-tag">{act}</span>)}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        {certifications && certifications.length > 0 && (
+          <>
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Certifications & Additional Education</h3>
+            <div class="certifications-grid">
+              {certifications.map((cert) => (
+                <div class="certification-card">
+                  <span class={`cert-type-badge ${cert.type}`}>
+                    {cert.type === 'exchange' ? '🌍 Exchange' : '📜 Certificate'}
+                  </span>
+                  <h4>{cert.title}</h4>
+                  <p class="cert-institution">{cert.institution}</p>
+                  {cert.location && <p class="cert-location">📍 {cert.location}</p>}
+                  {cert.year && <p class="cert-year">{cert.year}</p>}
+                  {cert.description && <p class="cert-desc">{cert.description}</p>}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </section>
 
       <section id="skills" class="panel">

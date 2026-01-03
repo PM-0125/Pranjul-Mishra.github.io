@@ -1,0 +1,324 @@
+/* Education Section Styles */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(34, 211, 238, 0.2);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.edu-status-badge {
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.edu-status-badge.in-progress {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+}
+
+.edu-status-badge.completed {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.edu-dates {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.education-card h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin: 0 0 8px;
+}
+
+.edu-field {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 4px 0;
+}
+
+.edu-spec {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 14px;
+    margin: 4px 0 12px;
+}
+
+.education-meta {
+    margin: 12px 0;
+}
+
+.edu-institution,
+.edu-location {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gpa-display {
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gpa-label {
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.gpa-score {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.gpa-grade {
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.coursework-details {
+    margin: 16px 0;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.coursework-details summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.2s ease;
+}
+
+.coursework-details summary:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.coursework-details[open] summary {
+    border-bottom: 1px solid var(--card-border);
+}
+
+.coursework-content {
+    padding: 16px;
+}
+
+.thesis-info,
+.coursework-list {
+    margin-bottom: 16px;
+}
+
+.thesis-info strong,
+.coursework-list strong {
+    color: var(--text);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.thesis-info p {
+    color: var(--muted);
+    font-style: italic;
+    margin: 6px 0;
+}
+
+.thesis-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    color: #fde047;
+}
+
+.coursework-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.coursework-list li {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.achievements-section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--card-border);
+}
+
+.honors-list,
+.achievements-list,
+.activities-list {
+    margin-bottom: 12px;
+}
+
+.honors-list strong,
+.achievements-list strong,
+.activities-list strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.honor-badge,
+.activity-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 4px 4px 4px 0;
+    background: rgba(251, 146, 60, 0.15);
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    border-radius: 999px;
+    font-size: 13px;
+    color: #fdba74;
+}
+
+.achievements-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements-list li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.achievements-list li::before {
+    content: "🏆";
+    position: absolute;
+    left: 0;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.certification-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.cert-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.cert-type-badge.exchange {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c4b5fd;
+}
+
+.cert-type-badge.certification {
+    background: rgba(34, 211, 238, 0.15);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    color: #7dd3fc;
+}
+
+.certification-card h4 {
+    color: var(--text);
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.cert-institution,
+.cert-location,
+.cert-year,
+.cert-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .coursework-list ul {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}

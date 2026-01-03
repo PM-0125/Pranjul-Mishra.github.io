@@ -171,9 +171,91 @@ export const publications = [
   }
 ];
 
+
 export const education = [
-  'M.Sc. Computer Science & Information Systems (AI), Warsaw University of Technology — GPA 4.63 (Feb 2024 – Dec 2025).',
-  'B.Tech. Computer Engineering (AI), Marwadi University — GPA 8.43 (Jun 2019 – May 2023).'
+  {
+    degree: 'Master of Science (M.Sc.)',
+    field: 'Computer Science and Information Systems',
+    specialization: 'Artificial Intelligence',
+    institution: 'Warsaw University of Technology',
+    location: 'Warsaw, Poland',
+    startDate: 'February 2024',
+    endDate: 'January 2026',
+    status: 'in-progress',
+    gpa: '4.63',
+    gpaScale: '5.0',
+    grade: 'Excellent',
+    coursework: [
+      'Agents and Agentic Applications & Development',
+      'Neural Networks',
+      'High Performance Computing',
+      'Knowledge Graphs',
+      'Knowledge Representation and Reasoning',
+      'Image Processing',
+      'Non-Linear Mathematics',
+      'Calculus',
+      'Data Compression'
+    ],
+    thesis: {
+      title: 'INFERMed: Intelligent Navigator for Evidence-based Retrieval in Medicine',
+      status: 'Defense Pending'
+    },
+    honors: ['NAWA Scholar'],
+    activities: ['Volunteer, PPRAI Conference 2024']
+  },
+  {
+    degree: 'Bachelor of Technology (B.Tech.)',
+    field: 'Computer Engineering',
+    specialization: 'Artificial Intelligence',
+    institution: 'Marwadi University',
+    location: 'Rajkot, India',
+    startDate: 'June 2019',
+    endDate: 'May 2023',
+    status: 'completed',
+    gpa: '8.43',
+    gpaScale: '10.0',
+    grade: 'First Class',
+    coursework: [
+      'Data Structures',
+      'Algorithms',
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Database Systems',
+      'Software Engineering'
+    ],
+    achievements: [
+      'Champion, Vodafone-Idea National Level Hackathon',
+      'Best Conference Presentation Award, International Hackathon for Biomedical Applications, Anna University Chennai',
+      'Erasmus+ Scholarship Recipient, University of Pitești, Romania'
+    ]
+  }
+];
+
+export const certifications = [
+  {
+    title: 'Erasmus+ Exchange Program',
+    institution: 'University of Pitești',
+    location: 'Romania',
+    year: '2021',
+    type: 'exchange'
+  },
+  {
+    title: 'Microsoft AI-900',
+    institution: 'Microsoft',
+    year: 'Certified',
+    type: 'certification'
+  },
+  {
+    title: 'ML/DS/Python & Design Innovation',
+    institution: 'Coursera',
+    description: '10+ Certificates',
+    type: 'certification'
+  },
+  {
+    title: 'Oracle SQL Programming',
+    institution: 'Oracle',
+    type: 'certification'
+  }
 ];
 
 export const skills = [

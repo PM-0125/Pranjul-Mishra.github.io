@@ -1,0 +1,287 @@
+/* Blog & Updates Section Styles */
+
+/* Channel Intro Container - Side by Side */
+.channel-intro-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.visual-wrapper {
+    flex-shrink: 0;
+}
+
+/* YouTube Channel Card */
+.youtube-channel-card {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(204, 0, 0, 0.05));
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.channel-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.channel-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+    flex-shrink: 0;
+}
+
+.channel-info {
+    flex: 1;
+}
+
+.channel-info h3 {
+    margin: 0 0 4px;
+    color: var(--text);
+    font-size: 1.3rem;
+}
+
+.channel-handle {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 2px 0;
+}
+
+.channel-description {
+    color: var(--muted);
+    margin: 8px 0 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.subscribe-btn {
+    white-space: nowrap;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.3rem;
+    margin: 32px 0 20px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Featured Video */
+.featured-video-section {
+    margin-bottom: 40px;
+}
+
+.video-featured {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-details {
+    padding: 20px;
+}
+
+.video-details h4 {
+    color: var(--text);
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+}
+
+.video-details p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Recent Videos Grid */
+.recent-videos-section {
+    margin-bottom: 40px;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(34, 211, 238, 0.15);
+    border-color: var(--primary);
+}
+
+.video-thumbnail {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.video-card:hover .play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.video-info {
+    padding: 16px;
+}
+
+.video-info h4 {
+    color: var(--text);
+    margin: 0 0 8px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.video-info p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.watch-link {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+
+.watch-link:hover {
+    gap: 8px;
+    color: var(--accent);
+}
+
+/* Blog Posts Section */
+.blog-posts-section {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--card-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .channel-intro-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .visual-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .channel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .channel-icon {
+        font-size: 2rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subscribe-btn {
+        width: 100%;
+    }
+}
+
+/* Animation for video cards */
+.video-card {
+    animation: videoFadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.video-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.video-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.video-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.video-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes videoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

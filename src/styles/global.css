@@ -4,6 +4,8 @@
 @import './education.css';
 @import './skills.css';
 @import './awards.css';
+@import './blog.css';
+@import './contact.css';
 
 :root {
   --bg: #0b1021;

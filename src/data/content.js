@@ -399,6 +399,31 @@ export const awards = [
   }
 ];
 
+
+export const youtubeChannel = {
+  name: 'AI Pathfinders',
+  handle: '@AnjanaNandan0125',
+  url: 'https://www.youtube.com/@AnjanaNandan0125',
+  description: 'Exploring AI, Machine Learning, and Deep Learning - Education for All',
+  featuredVideo: {
+    id: 'eoLJAQLUXbM',
+    title: 'Introduction | Artificial Intelligence | Education for All | New Course',
+    description: 'Welcome to AI Pathfinders! Journey through Machine Learning, Deep Learning, and AI. Demystifying complex concepts with theory and hands-on coding.',
+  },
+  videos: [
+    {
+      id: 'DIkAd3aBpg4',
+      title: 'AI vs ML vs Deep Learning - Understanding the Differences',
+      description: 'Exploring the distinctions between AI, Machine Learning, and Deep Learning. Understanding how these technologies relate and build upon each other.',
+    },
+    {
+      id: 'RYoy9R-GkUQ',
+      title: 'Machine Learning Fundamentals - Complete Introduction',
+      description: 'Comprehensive introduction to Machine Learning: definitions, types of algorithms, supervised/unsupervised learning, and key concepts.',
+    }
+  ]
+};
+
 export const blogPosts = [
   { title: 'Credible AI pipelines: from notebooks to CI', date: '2025-02-01', tags: ['CI', 'AI Reliability'], summary: 'Notes on taking research code to production-ready Python packages.' },
   { title: 'Clinical RAG with RDF/SPARQL', date: '2025-01-15', tags: ['RAG', 'RDF'], summary: 'Designing retrieval over knowledge graphs for drug–drug interactions.' },

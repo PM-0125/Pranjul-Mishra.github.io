@@ -2,6 +2,8 @@
 @import './timeline.css';
 @import './publications.css';
 @import './education.css';
+@import './skills.css';
+@import './awards.css';
 
 :root {
   --bg: #0b1021;

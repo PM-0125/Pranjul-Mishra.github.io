@@ -1,0 +1,197 @@
+/* Awards & Recognitions Section Styles */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.award-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.award-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(34, 211, 238, 0.2);
+}
+
+.award-card:hover::before {
+    opacity: 1;
+}
+
+/* Category-specific colors */
+.award-card.hackathon {
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+.award-card.research {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.award-card.academic {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.award-card.service {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.award-icon-large {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.3));
+}
+
+.award-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.award-category-badge {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.award-category-badge.hackathon {
+    background: rgba(251, 146, 60, 0.15);
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    color: #fdba74;
+}
+
+.award-category-badge.research {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c4b5fd;
+}
+
+.award-category-badge.academic {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+}
+
+.award-category-badge.service {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+}
+
+.award-date {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.award-card h3 {
+    color: var(--text);
+    font-size: 1.15rem;
+    margin: 12px 0 8px;
+    line-height: 1.3;
+}
+
+.award-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 8px 0;
+}
+
+.award-org {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin: 4px 0 12px;
+}
+
+.award-description {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Animation for award cards on load */
+.award-card {
+    animation: awardFadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.award-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.award-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.award-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.award-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.award-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes awardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hover glow effect */
+.award-card:hover .award-icon-large {
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.6));
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .award-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

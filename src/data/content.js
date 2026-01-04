@@ -258,25 +258,145 @@ export const certifications = [
   }
 ];
 
+
 export const skills = [
-  { title: 'AI App Dev', items: ['RAG', 'RDF/SPARQL retrieval', 'Prompt engineering', 'Evaluation', 'Agent/tool use (in progress)'] },
-  { title: 'Python & Testing', items: ['Packaging', 'CLI tools', 'pytest', 'mypy', 'ruff/black', 'MkDocs/Sphinx'] },
-  { title: 'MLOps & Repro', items: ['MLflow', 'DVC', 'Docker', 'Conda', 'GitHub Actions', 'Deterministic envs'] },
-  { title: 'ML/DS', items: ['PyTorch', 'TensorFlow', 'scikit-learn', 'OpenCV', 'NLTK', 'spaCy'] },
-  { title: 'Data/DB', items: ['SQL (PostgreSQL/MySQL)', 'SPARQL', 'Apache Jena', 'QLever'] },
-  { title: 'Frontend', items: ['HTML/CSS', 'React/Next.js (learning)'] },
-  { title: 'Cloud', items: ['GCP target', 'Cloud Run', 'Vertex AI (learning)'] },
-  { title: 'Soft', items: ['Partnering with researchers/ops', 'Documentation', 'Public speaking'] },
-  { title: 'Languages', items: ['English – Fluent', 'Polish – Basic', 'Hindi – Native'] }
+  {
+    category: 'AI & RAG Development',
+    color: '#3b82f6',
+    icon: '🤖',
+    skills: [
+      { name: 'RAG Systems', proficiency: 90 },
+      { name: 'RDF/SPARQL Retrieval', proficiency: 85 },
+      { name: 'Prompt Engineering', proficiency: 80 },
+      { name: 'Evaluation & Testing', proficiency: 85 },
+      { name: 'Agent/Tool Use', proficiency: 65, learning: true }
+    ]
+  },
+  {
+    category: 'Python & Scientific Computing',
+    color: '#10b981',
+    icon: '🐍',
+    skills: [
+      { name: 'Python', proficiency: 95 },
+      { name: 'NumPy/Pandas', proficiency: 90 },
+      { name: 'Testing (pytest)', proficiency: 85 },
+      { name: 'CI/CD (GitHub Actions)', proficiency: 80 },
+      { name: 'Type Hints & Linting', proficiency: 85 }
+    ]
+  },
+  {
+    category: 'Machine Learning & Data Science',
+    color: '#f59e0b',
+    icon: '📊',
+    skills: [
+      { name: 'PyTorch', proficiency: 85 },
+      { name: 'TensorFlow', proficiency: 75 },
+      { name: 'scikit-learn', proficiency: 90 },
+      { name: 'OpenCV', proficiency: 70 },
+      { name: 'NLTK/spaCy', proficiency: 75 }
+    ]
+  },
+  {
+    category: 'Databases & Knowledge Graphs',
+    color: '#8b5cf6',
+    icon: '🗄️',
+    skills: [
+      { name: 'SQL (PostgreSQL/MySQL)', proficiency: 85 },
+      { name: 'SPARQL', proficiency: 90 },
+      { name: 'Apache Jena', proficiency: 75 },
+      { name: 'QLever', proficiency: 70 }
+    ]
+  },
+  {
+    category: 'Web Development',
+    color: '#06b6d4',
+    icon: '🌐',
+    skills: [
+      { name: 'HTML/CSS', proficiency: 85 },
+      { name: 'JavaScript', proficiency: 75 },
+      { name: 'React/Next.js', proficiency: 60, learning: true }
+    ]
+  },
+  {
+    category: 'Cloud & MLOps',
+    color: '#ec4899',
+    icon: '☁️',
+    skills: [
+      { name: 'GCP', proficiency: 65, learning: true },
+      { name: 'Cloud Run', proficiency: 60 },
+      { name: 'Vertex AI', proficiency: 55, learning: true },
+      { name: 'MLflow/DVC', proficiency: 75 }
+    ]
+  },
+  {
+    category: 'Soft Skills',
+    color: '#f97316',
+    icon: '🤝',
+    skills: [
+      { name: 'Research Collaboration', proficiency: 90 },
+      { name: 'Technical Documentation', proficiency: 95 },
+      { name: 'Public Speaking', proficiency: 80 }
+    ]
+  },
+  {
+    category: 'Languages',
+    color: '#22d3ee',
+    icon: '🗣️',
+    skills: [
+      { name: 'English', proficiency: 95, level: 'Fluent' },
+      { name: 'Hindi', proficiency: 100, level: 'Native' },
+      { name: 'Polish', proficiency: 30, level: 'Basic' }
+    ]
+  }
 ];
 
-export const achievements = [
-  'Winner, Vodafone Idea Innovation Marathon (Oct 2022).',
-  'Best Research Poster – Impact of AI in Bioinformatics & Precision Medicine (Sep 2022).',
-  'NVIDIA Fundamentals of Deep Learning.',
-  'Microsoft Azure AI-900.',
-  'Oracle SQL Programming.',
-  '10+ Coursera certificates (ML/DS/Python).'
+
+export const awards = [
+  {
+    title: 'Vodafone-Idea National Level Hackathon',
+    award: 'Champion',
+    category: 'hackathon',
+    organization: 'Vodafone-Idea',
+    date: 'October 2022',
+    description: 'Won first place in national-level innovation marathon',
+    icon: '🏆'
+  },
+  {
+    title: 'Best Conference Presentation Award',
+    award: 'Best Presentation',
+    category: 'research',
+    organization: 'International Hackathon for Biomedical Applications, Anna University Chennai',
+    date: 'September 2022',
+    description: 'Recognized for outstanding research presentation on AI in Bioinformatics & Precision Medicine',
+    icon: '🎤'
+  },
+  {
+    title: 'NAWA Scholarship',
+    award: 'Scholar',
+    category: 'academic',
+    organization: 'Polish National Agency for Academic Exchange (NAWA)',
+    date: '2024-2025',
+    description: 'Prestigious scholarship for M.Sc. studies in Poland',
+    icon: '🎓'
+  },
+  {
+    title: 'Erasmus+ Scholarship',
+    award: 'Exchange Program',
+    category: 'academic',
+    organization: 'European Union',
+    date: '2021',
+    description: 'Selected for semester exchange program at University of Pitești, Romania',
+    icon: '🌍'
+  },
+  {
+    title: 'PPRAI Conference 2024',
+    award: 'Volunteer',
+    category: 'service',
+    organization: 'Warsaw University of Technology',
+    date: '2024',
+    description: 'Contributed to organizing prestigious AI conference',
+    icon: '🤝'
+  }
 ];
 
 export const blogPosts = [

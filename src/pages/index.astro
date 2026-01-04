@@ -7,7 +7,7 @@ import {
   education,
   certifications,
   skills,
-  achievements,
+  awards,
   blogPosts,
   navSections
 } from '../data/content';
@@ -19,6 +19,8 @@ import AcademicVisual from '../components/AcademicVisual';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import PublicationsVisualization from '../components/PublicationsVisualization';
 import EducationVisualization from '../components/EducationVisualization';
+import SkillsVisualization from '../components/SkillsVisualization';
+import AwardsVisualization from '../components/AwardsVisualization';
 
 const hero = {
   name: 'Pranjul Mishra',
@@ -369,21 +371,71 @@ const hero = {
 
       <section id="skills" class="panel">
         <header><h2>Skills</h2></header>
-        <div class="skills">
-          {skills.map((s) => (
-            <div class="skill-group">
-              <strong>{s.title}</strong>
-              <p>{s.items.join(', ')}</p>
+        
+        <!-- 3D Tech Stack Visual -->
+        <SkillsVisualization client:load />
+        
+        <div class="skills-grid">
+          {skills.map((category) => (
+            <div class="skill-category-card">
+              <div class="category-header">
+                <span class="category-icon">{category.icon}</span>
+                <h3 style={`color: ${category.color}`}>{category.category}</h3>
+              </div>
+              
+              <div class="skills-list">
+                {category.skills.map((skill) => (
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">{skill.name}</span>
+                      {skill.learning && <span class="learning-badge">📚 Learning</span>}
+                      {skill.level && <span class="level-badge">{skill.level}</span>}
+                    </div>
+                    <div class="skill-progress">
+                      <div class="progress-bar">
+                        <div 
+                          class="progress-fill" 
+                          style={`width: ${skill.proficiency}%; background: ${category.color}`}
+                        ></div>
+                      </div>
+                      <span class="proficiency-text">{skill.proficiency}%</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       <section id="achievements" class="panel">
-        <header><h2>Achievements & Certifications</h2></header>
-        <ul class="list">
-          {achievements.map((a) => <li>{a}</li>)}
-        </ul>
+        <header><h2>Awards & Recognitions</h2></header>
+        
+        <!-- 3D Trophy Visual -->
+        <AwardsVisualization client:load />
+        
+        <div class="awards-grid">
+          {awards.map((award) => (
+            <div class={`award-card ${award.category}`}>
+              <div class="award-icon-large">{award.icon}</div>
+              
+              <div class="award-header">
+                <span class={`award-category-badge ${award.category}`}>
+                  {award.category === 'hackathon' ? '🏆 Hackathon' : 
+                   award.category === 'research' ? '🔬 Research' : 
+                   award.category === 'academic' ? '🎓 Academic' : 
+                   '🤝 Service'}
+                </span>
+                <span class="award-date">{award.date}</span>
+              </div>
+              
+              <h3>{award.title}</h3>
+              <p class="award-title">{award.award}</p>
+              <p class="award-org">{award.organization}</p>
+              <p class="award-description">{award.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section id="blog" class="panel">

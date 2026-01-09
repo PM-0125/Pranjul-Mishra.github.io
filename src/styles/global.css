@@ -98,13 +98,13 @@ a {
 }
 
 .profile-photo {
-  width: 44px;
-  height: 44px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--card-border);
+  border: 2px solid var(--primary);
   box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.12);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo:hover {

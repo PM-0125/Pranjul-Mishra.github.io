@@ -439,7 +439,7 @@ export const navSections = [
   { id: 'education', label: 'Education' },
   { id: 'skills', label: 'Skills' },
   { id: 'achievements', label: 'Achievements' },
-  { id: 'blog', label: 'Blog' },
+  { id: 'blog', label: 'Public Engagement' },
   { id: 'contact', label: 'Contact' }
 ];
 

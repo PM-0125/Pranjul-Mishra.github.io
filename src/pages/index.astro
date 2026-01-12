@@ -219,64 +219,77 @@ const hero = {
       <section id="publications" class="panel">
         <header><h2>Publications & Talks</h2></header>
         
-        <!-- 3D Publications Visual -->
-        <PublicationsVisualization client:load />
-        
-        <div class="publications-grid">
-          {publications.map((pub) => (
-            <div class="publication-card">
-              <div class="publication-header">
-                <span class={`pub-type-badge ${pub.type}`}>
-                  {pub.type === 'journal' ? '📄 Journal' : 
-                   pub.type === 'preprint' ? '📋 Preprint' : 
-                   pub.type === 'book-chapter' ? '📚 Book Chapter' : '📄 Article'}
-                </span>
-                <span class={`pub-status-badge ${pub.status}`}>
-                  {pub.status === 'published' ? '✓ Published' : 
-                   pub.status === 'preprint' ? '⏳ Preprint' : 
-                   '🔄 In Progress'}
-                </span>
-                <span class="pub-year">{pub.year}</span>
+        {(() => {
+          const groupedByYear = publications.reduce((acc, pub) => {
+            if (!acc[pub.year]) acc[pub.year] = [];
+            acc[pub.year].push(pub);
+            return acc;
+          }, {});
+          
+          const years = Object.keys(groupedByYear).sort((a, b) => b - a);
+          
+          return years.map((year) => (
+            <div class="year-group">
+              <div class="year-header">
+                <h3>{year}</h3>
+                <div class="year-line"></div>
               </div>
               
-              <h3>{pub.title}</h3>
-              
-              <div class="publication-meta">
-                <p class="pub-authors">{pub.authors}</p>
-                <p class="pub-venue">{pub.venue}</p>
+              <div class="publications-grid">
+                {groupedByYear[year].map((pub) => (
+                  <div class="publication-card">
+                    <div class="publication-header">
+                      <span class={`pub-type-badge ${pub.type}`}>
+                        {pub.type === 'journal' ? '📄 Journal' : 
+                         pub.type === 'preprint' ? '📝 Preprint' :
+                         pub.type === 'book-chapter' ? '📚 Book Chapter' : '📑 Publication'}
+                      </span>
+                      <span class={`pub-status-badge ${pub.status}`}>
+                        {pub.status === 'published' ? '✓ Published' : '⏳ Preprint'}
+                      </span>
+                      <span class="pub-year">{pub.year}</span>
+                    </div>
+                    
+                    <h3>{pub.title}</h3>
+                    
+                    <div class="publication-meta">
+                      <p class="pub-authors">{pub.authors}</p>
+                      <p class="pub-venue">{pub.venue}</p>
+                    </div>
+                    
+                    <p class="pub-abstract">{pub.abstract}</p>
+                    
+                    <div class="pub-links">
+                      {pub.doi && (
+                        <a class="btn ghost small" href={pub.doi} target="_blank" rel="noopener">
+                          🔗 DOI
+                        </a>
+                      )}
+                      {pub.pdf && (
+                        <a class="btn ghost small" href={pub.pdf} target="_blank" rel="noopener">
+                          📄 PDF
+                        </a>
+                      )}
+                      {pub.scholar && (
+                        <a class="btn ghost small" href={pub.scholar} target="_blank" rel="noopener">
+                          🎓 Scholar
+                        </a>
+                      )}
+                    </div>
+                    
+                    <div class="tags">{pub.tags.map((t) => <span class="tag">{t}</span>)}</div>
+                  </div>
+                ))}
               </div>
-              
-              <p class="pub-abstract">{pub.abstract}</p>
-              
-              <div class="pub-links">
-                {pub.doi && (
-                  <a class="btn ghost small" href={pub.doi} target="_blank" rel="noopener">
-                    🔗 DOI
-                  </a>
-                )}
-                {pub.pdf && (
-                  <a class="btn ghost small" href={pub.pdf} target="_blank" rel="noopener">
-                    📄 PDF
-                  </a>
-                )}
-                {pub.scholar && (
-                  <a class="btn ghost small" href={pub.scholar} target="_blank" rel="noopener">
-                    🎓 Scholar
-                  </a>
-                )}
-              </div>
-              
-              <div class="tags">{pub.tags.map((t) => <span class="tag">{t}</span>)}</div>
             </div>
-          ))}
-        </div>
+          ));
+        })()}
       </section>
 
       <section id="education" class="panel">
         <header><h2>Education</h2></header>
         
-        <!-- 3D Graduation Visual -->
-        <EducationVisualization client:load />
+
         
         <div class="education-grid">
           {education.map((edu) => (

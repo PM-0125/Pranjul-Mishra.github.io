@@ -7,6 +7,7 @@ import {
   education,
   certifications,
   skills,
+  additionalSkills,
   awards,
   youtubeChannel,
   blogPosts,
@@ -20,7 +21,7 @@ import AcademicVisual from '../components/AcademicVisual';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import PublicationsVisualization from '../components/PublicationsVisualization';
 import EducationVisualization from '../components/EducationVisualization';
-import SkillsVisualization from '../components/SkillsVisualization';
+
 import AwardsVisualization from '../components/AwardsVisualization';
 import BlogVisualization from '../components/BlogVisualization';
 import ContactVisualizationWrapper from '../components/ContactVisualizationWrapper';
@@ -369,42 +370,60 @@ const hero = {
         )}
       </section>
 
+      </section>
+
       <section id="skills" class="panel">
         <header><h2>Skills</h2></header>
         
-        <!-- 3D Tech Stack Visual -->
-        <SkillsVisualization client:load />
-        
-        <div class="skills-grid">
-          {skills.map((category) => (
-            <div class="skill-category-card">
-              <div class="category-header">
-                <span class="category-icon">{category.icon}</span>
-                <h3 style={`color: ${category.color}`}>{category.category}</h3>
+        <div class="skills-domains">
+          {Object.entries(skills).map(([key, domain]) => (
+            <div class="domain-section">
+              <div class="domain-header">
+                <h3>{domain.title}</h3>
+                <p class="domain-desc">{domain.description}</p>
               </div>
               
-              <div class="skills-list">
-                {category.skills.map((skill) => (
-                  <div class="skill-item">
-                    <div class="skill-info">
+              <div class="skills-badges">
+                {domain.skills.map((skill) => (
+                  <div class={`skill-badge skill-${skill.level}`}>
+                    {skill.proof ? (
+                      <a href={skill.proof} class="skill-link">
+                        <span class="skill-name">{skill.name}</span>
+                        <span class="proof-icon">🔗</span>
+                      </a>
+                    ) : (
                       <span class="skill-name">{skill.name}</span>
-                      {skill.learning && <span class="learning-badge">📚 Learning</span>}
-                      {skill.level && <span class="level-badge">{skill.level}</span>}
-                    </div>
-                    <div class="skill-progress">
-                      <div class="progress-bar">
-                        <div 
-                          class="progress-fill" 
-                          style={`width: ${skill.proficiency}%; background: ${category.color}`}
-                        ></div>
-                      </div>
-                      <span class="proficiency-text">{skill.proficiency}%</span>
+                    )}
+                    <div class="proficiency-dots">
+                      <span class={skill.level === 'expert' || skill.level === 'proficient' || skill.level === 'learning' ? 'dot filled' : 'dot'}></span>
+                      <span class={skill.level === 'expert' || skill.level === 'proficient' ? 'dot filled' : 'dot'}></span>
+                      <span class={skill.level === 'expert' ? 'dot filled' : 'dot'}></span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+
+        <!-- Additional Skills -->
+        <div class="additional-skills">
+          <div class="additional-section">
+            <h4>Languages</h4>
+            <div class="lang-list">
+              {additionalSkills.languages.map((lang) => (
+                <span>{lang.name} ({lang.level})</span>
+              ))}
+            </div>
+          </div>
+          <div class="additional-section">
+            <h4>Professional Skills</h4>
+            <div class="soft-list">
+              {additionalSkills.soft.map((s) => (
+                <span>{s}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

@@ -259,96 +259,76 @@ export const certifications = [
 ];
 
 
-export const skills = [
-  {
-    category: 'AI & RAG Development',
-    color: '#3b82f6',
-    icon: '🤖',
+export const skills = {
+  coreAI: {
+    title: 'Core AI & Research',
+    description: 'Technologies for AI/ML research and implementation',
     skills: [
-      { name: 'RAG Systems', proficiency: 90 },
-      { name: 'RDF/SPARQL Retrieval', proficiency: 85 },
-      { name: 'Prompt Engineering', proficiency: 80 },
-      { name: 'Evaluation & Testing', proficiency: 85 },
-      { name: 'Agent/Tool Use', proficiency: 65, learning: true }
+      { name: 'PyTorch', level: 'expert', proof: '#projects' },
+      { name: 'RAG Architectures', level: 'expert', proof: '#publications' },
+      { name: 'Knowledge Graphs (SPARQL/RDF)', level: 'expert', proof: '#research' },
+      { name: 'Prompt Engineering', level: 'expert' },
+      { name: 'TensorFlow', level: 'proficient' },
+      { name: 'scikit-learn', level: 'proficient' },
+      { name: 'Evaluation & Testing', level: 'proficient' },
+      { name: 'Agent/Tool Use', level: 'learning' }
     ]
   },
-  {
-    category: 'Python & Scientific Computing',
-    color: '#10b981',
-    icon: '🐍',
+  engineering: {
+    title: 'Engineering & Reproducibility',
+    description: 'Production-grade software engineering practices',
     skills: [
-      { name: 'Python', proficiency: 95 },
-      { name: 'NumPy/Pandas', proficiency: 90 },
-      { name: 'Testing (pytest)', proficiency: 85 },
-      { name: 'CI/CD (GitHub Actions)', proficiency: 80 },
-      { name: 'Type Hints & Linting', proficiency: 85 }
+      { name: 'Python (Testing/Type Hints/pylint)', level: 'expert', proof: '#research' },
+      { name: 'CI/CD (GitHub Actions)', level: 'expert', proof: '#experience' },
+      { name: 'Git/Version Control', level: 'expert' },
+      { name: 'pytest', level: 'expert' },
+      { name: 'DVC', level: 'proficient' },
+      { name: 'MLflow', level: 'proficient' },
+      { name: 'Docker', level: 'proficient' },
+      { name: 'Conda', level: 'proficient' },
+      { name: 'Linux', level: 'proficient' },
+      { name: 'Kubernetes', level: 'learning' }
     ]
   },
-  {
-    category: 'Machine Learning & Data Science',
-    color: '#f59e0b',
-    icon: '📊',
+  data: {
+    title: 'Data & Backend',
+    description: 'Data infrastructure and backend systems',
     skills: [
-      { name: 'PyTorch', proficiency: 85 },
-      { name: 'TensorFlow', proficiency: 75 },
-      { name: 'scikit-learn', proficiency: 90 },
-      { name: 'OpenCV', proficiency: 70 },
-      { name: 'NLTK/spaCy', proficiency: 75 }
+      { name: 'SPARQL', level: 'expert', proof: '#research' },
+      { name: 'Apache Jena', level: 'expert', proof: '#publications' },
+      { name: 'PostgreSQL', level: 'proficient' },
+      { name: 'SQL', level: 'proficient' },
+      { name: 'QLever', level: 'proficient' },
+      { name: 'NumPy/Pandas', level: 'proficient' },
+      { name: 'Neo4j', level: 'learning' }
     ]
   },
-  {
-    category: 'Databases & Knowledge Graphs',
-    color: '#8b5cf6',
-    icon: '🗄️',
+  specialized: {
+    title: 'Specialized Domains',
+    description: 'Domain-specific research expertise',
     skills: [
-      { name: 'SQL (PostgreSQL/MySQL)', proficiency: 85 },
-      { name: 'SPARQL', proficiency: 90 },
-      { name: 'Apache Jena', proficiency: 75 },
-      { name: 'QLever', proficiency: 70 }
-    ]
-  },
-  {
-    category: 'Web Development',
-    color: '#06b6d4',
-    icon: '🌐',
-    skills: [
-      { name: 'HTML/CSS', proficiency: 85 },
-      { name: 'JavaScript', proficiency: 75 },
-      { name: 'React/Next.js', proficiency: 60, learning: true }
-    ]
-  },
-  {
-    category: 'Cloud & MLOps',
-    color: '#ec4899',
-    icon: '☁️',
-    skills: [
-      { name: 'GCP', proficiency: 65, learning: true },
-      { name: 'Cloud Run', proficiency: 60 },
-      { name: 'Vertex AI', proficiency: 55, learning: true },
-      { name: 'MLflow/DVC', proficiency: 75 }
-    ]
-  },
-  {
-    category: 'Soft Skills',
-    color: '#f97316',
-    icon: '🤝',
-    skills: [
-      { name: 'Research Collaboration', proficiency: 90 },
-      { name: 'Technical Documentation', proficiency: 95 },
-      { name: 'Public Speaking', proficiency: 80 }
-    ]
-  },
-  {
-    category: 'Languages',
-    color: '#22d3ee',
-    icon: '🗣️',
-    skills: [
-      { name: 'English', proficiency: 95, level: 'Fluent' },
-      { name: 'Hindi', proficiency: 100, level: 'Native' },
-      { name: 'Polish', proficiency: 30, level: 'Basic' }
+      { name: 'Computational Genomics', level: 'expert', proof: '#projects' },
+      { name: 'BioXAI', level: 'expert', proof: '#research' },
+      { name: 'Clinical NLP', level: 'expert', proof: '#publications' },
+      { name: 'RDF/Knowledge Graph Retrieval', level: 'expert', proof: '#research' },
+      { name: 'High-Dimensional Data Analysis', level: 'proficient' },
+      { name: 'Bioinformatics Pipelines', level: 'proficient' }
     ]
   }
-];
+};
+
+export const additionalSkills = {
+  languages: [
+    { name: 'English', level: 'Fluent' },
+    { name: 'Hindi', level: 'Native' },
+    { name: 'Polish', level: 'Basic' }
+  ],
+  soft: [
+    'Technical Documentation',
+    'Research Collaboration',
+    'Public Speaking'
+  ]
+};
 
 
 export const awards = [

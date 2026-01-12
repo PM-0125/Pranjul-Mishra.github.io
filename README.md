@@ -1,39 +1,182 @@
-# Pranjul Mishra — Portfolio (Astro)
+# Pranjul Mishra — Portfolio
 
-Cosmos-themed portfolio for Pranjul Mishra (Research Software Engineer, credible AI/RAG) built with Astro. Deployed via GitHub Pages from `main`.
+**Research Software Engineer** specializing in AI, Knowledge Graphs, and Computational Genomics
 
-## Stack
-- Astro (static site), Fuse.js for blog search
-- Custom CSS (cosmos theme), particles canvas, PWA (manifest + SW)
-- Content defined in `src/data/content.ts`
+Live Site: **[pm-0125.github.io](https://pm-0125.github.io/)**
 
-## Structure
-- `src/pages/index.astro` – main page with all sections.
-- `src/styles/global.css` – theme and layout.
-- `src/data/content.ts` – hero, research, projects, experience, skills, achievements, blog posts.
-- `public/manifest.webmanifest`, `public/sw.js`, `public/PRANJULMISHRA_CV.pdf` – static assets.
+---
 
-## Local development
-```bash
-npm install
-npm run dev
-# open http://localhost:4321
+## Overview
+
+Professional portfolio showcasing research software engineering expertise in:
+- **AI & RAG Systems**: Knowledge Graph-based retrieval, SPARQL integration, clinical NLP
+- **Computational Genomics**: Structural variant detection, bioinformatics pipelines
+- **Engineering Best Practices**: CI/CD, testing, reproducible ML, DVC/MLflow
+
+Built with **Astro** for optimal performance and deployed via GitHub Pages.
+
+---
+
+## Tech Stack
+
+- **Framework**: Astro (static site generation)
+- **Styling**: Custom CSS with dark theme
+- **3D Visualizations**: React Three Fiber (desktop only)
+- **Responsive**: Mobile-optimized with adaptive layouts
+- **PWA**: Manifest + Service Worker for app-like experience
+
+---
+
+## Portfolio Sections
+
+1. **Hero** - Professional introduction with orbiting profile
+2. **Research & Projects** - Clinical RAG, genomics algorithms, BioXAI tools
+3. **Academic Projects** - Structural variant detection, breast cancer analysis, ART neural networks
+4. **Experience** - Timeline visualization of research positions
+5. **Publications** - Academic papers and presentations
+6. **Education** - Degrees, certifications, coursework
+7. **Skills** - Domain-organized technical expertise (no arbitrary percentages)
+8. **Awards & Recognitions** - Competitive achievements and honors
+9. **Public Engagement** - YouTube channel (AI Pathfinders) with educational content
+10. **Contact** - Working Formspree integration + social links
+
+---
+
+## Project Structure
+
+```
+src/
+├── pages/
+│   └── index.astro          # Main portfolio page
+├── components/              # React components for 3D visuals
+│   ├── UniverseBackground.jsx
+│   ├── HeroParticles.jsx
+│   ├── Planet3D.jsx
+│   ├── AcademicVisual.jsx
+│   ├── AwardsVisual.jsx
+│   ├── BlogVisual.jsx
+│   ├── EducationVisual.jsx
+│   ├── PublicationVisual.jsx
+│   └── ExperienceTimeline.jsx
+├── data/
+│   └── content.js           # Portfolio data (projects, skills, awards, etc.)
+└── styles/
+    ├── global.css           # Main theme & responsive layout
+    ├── timeline.css
+    ├── publications.css
+    ├── education.css
+    ├── skills.css
+    ├── awards.css
+    ├── blog.css
+    └── contact.css
+
+public/
+├── photo.jpg                # Profile image
+├── PRANJULMISHRA_CV.pdf     # Resume
+├── manifest.webmanifest     # PWA manifest
+└── sw.js                    # Service worker
 ```
 
-## Build
+---
+
+## Local Development
+
 ```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+# Opens at http://localhost:4321
+
+# Build for production
 npm run build
+
+# Preview production build
 npm run preview
 ```
 
-## Deploy (GitHub Pages)
-Workflow `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `main`. Ensure Pages is enabled for the repo.
+---
 
-## View the site
-Once Pages is enabled and a build has run, the site will be available at:
-- https://pm-0125.github.io/
+## Deployment
 
-## Owner TODO
-- Update Formspree endpoint in `src/pages/index.astro` (`action="https://formspree.io/f/YOUR_FORM_ID"`).
-- Add GA4 later by inserting gtag in `<head>` when you have the Measurement ID.
-- Replace `og-preview.png` if you add a custom preview image.
+Automatically deployed to GitHub Pages via `.github/workflows/deploy.yml` on push to `main`.
+
+**Live URL**: [https://pm-0125.github.io/](https://pm-0125.github.io/)
+
+---
+
+## Key Features
+
+### 🎨 Professional Design
+- Dark theme with cyan/magenta accents
+- Smooth animations and transitions
+- Custom particle system background
+
+### 📱 Mobile-Optimized
+- Responsive breakpoints (1080px, 768px, 480px)
+- 3D visualizations disabled on mobile for performance
+- Touch-friendly navigation and buttons
+- Scalable typography and layouts
+
+### 🔗 Working Contact Form
+- Formspree integration (configured)
+- Email notifications on submission
+- Form validation
+
+### 🎓 Domain-Based Skills
+- No arbitrary percentages
+- Expert/Proficient/Learning proficiency system
+- Grouped by technical domain (Core AI, Engineering, Data, Specialized)
+- Proof links to relevant projects
+
+### 🎥 YouTube Integration
+- AI Pathfinders channel showcase
+- Featured video + recent videos grid
+- Education-focused content presentation
+
+---
+
+## Configuration Notes
+
+### Contact Form
+✅ **Already configured** with Formspree (ID: xkogkoeb)
+- Submissions go to: pranjulmishra228161@gmail.com
+- No additional setup needed
+
+### Analytics (Optional)
+To add Google Analytics:
+1. Get GA4 Measurement ID
+2. Add tracking script in `src/pages/index.astro` `<head>`
+
+### Custom Preview Image
+Replace `public/og-preview.png` with custom social media preview (1200x630px recommended)
+
+---
+
+## Data Updates
+
+Edit `src/data/content.js` to update:
+- Projects, research items, publications
+- Skills, awards, certifications
+- Experience timeline
+- YouTube videos
+- Contact information
+
+---
+
+## License
+
+MIT License - See LICENSE file for details
+
+---
+
+## Author
+
+**Pranjul Mishra**  
+Research Software Engineer  
+Warsaw, Poland
+
+- GitHub: [@PM-0125](https://github.com/PM-0125)
+- LinkedIn: [pranjul-mishra](https://www.linkedin.com/in/pranjul-mishra/)
+- Email: pranjulmishra228161@gmail.com

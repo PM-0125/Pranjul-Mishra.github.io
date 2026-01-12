@@ -53,17 +53,16 @@ export const research = [
 
 export const projects = [
   {
-    title: 'Shopping Template',
-    summary: 'Static HTML/CSS e-commerce shell; reusable UI for small AI utilities.',
+    title: 'Structural Variant Detection Algorithm',
+    summary: 'Python pipeline detecting genomic deletions, inversions, duplications, and translocations in BAM files.',
     links: [
-      { label: 'GitHub', href: 'https://github.com/PM-0125/ShoppingTemplate.github.io' },
-      { label: 'Live Demo', href: 'https://pm-0125.github.io/ShoppingTemplate.github.io/' }
+      { label: 'GitHub', href: 'https://github.com/PM-0125/Computational-Genomics/tree/main/Structural_Variant_Detection_Algorithm' }
     ],
-    location: 'Frontend Development',
-    readme: 'Responsive e-commerce template built with vanilla HTML/CSS/JavaScript. Features product grid, cart functionality, and checkout flow. Designed as a reusable UI shell for integrating AI utilities and small-scale applications with minimal dependencies.',
-    tags: ['Frontend', 'UI', 'HTML/CSS'],
-    year: '2023',
-    visualType: 'ui'
+    location: 'Computational Genomics',
+    readme: 'Python algorithm for detecting structural variants in genomic alignment files (BAM format). Implements parallel processing for efficient analysis of large-scale datasets. Detects deletions, inversions, duplications, and translocations by analyzing paired-read patterns. Outputs results in standard VCF format.',
+    tags: ['Python', 'Genomics', 'Parallel Processing', 'Bioinformatics'],
+    year: '2024',
+    visualType: 'neural'
   },
   {
     title: 'Advanced Breast Cancer Analysis',

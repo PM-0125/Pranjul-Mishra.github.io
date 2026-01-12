@@ -562,4 +562,135 @@ canvas#stars {
     flex-direction: row;
     flex-wrap: wrap;
   }
+}/* Enhanced Mobile Optimizations */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .profile-photo {
+        width: 56px !important;
+        height: 56px !important;
+        margin: -28px;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand-role {
+        font-size: 0.85rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .planet-core {
+        width: 180px !important;
+        height: 180px !important;
+        margin: -90px !important;
+    }
+
+    .planetary-illustration {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .panel {
+        padding: 24px 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Small Mobile Optimizations */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .side-nav {
+        padding: 12px;
+    }
+
+    .profile-photo {
+        width: 48px !important;
+        height: 48px !important;
+        margin: -24px;
+    }
+
+    #toc a {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .planet-core {
+        width: 150px !important;
+        height: 150px !important;
+        margin: -75px !important;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .cta-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+/* Disable 3D Canvases on Mobile for Performance */
+@media (max-width: 768px) {
+
+    /* Hide all canvas wrappers */
+    canvas,
+    .visual-wrapper {
+        display: none !important;
+    }
+
+    /* Adjust layouts that depend on 3D elements */
+    .channel-intro-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .blog-content {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Force dark theme (no light mode) */
+html[data-theme="light"] {
+    display: none;
+}
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
 }

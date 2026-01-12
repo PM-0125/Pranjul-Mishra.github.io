@@ -64,6 +64,14 @@ const hero = {
     <meta property="og:image" content="https://pm-0125.github.io/og-preview.png" />
   </head>
   <body>
+    <!-- Mobile Desktop Viewing Notice -->
+    <div class="mobile-notice" id="mobileNotice">
+      <div class="notice-content">
+        <span>💻 For the best experience with 3D visuals, view on desktop</span>
+        <button class="notice-close" onclick="document.getElementById('mobileNotice').style.display='none'" aria-label="Close notice">×</button>
+      </div>
+    </div>
+
     <UniverseBackground client:load />
     <aside class="side-nav">
       <div class="brand">

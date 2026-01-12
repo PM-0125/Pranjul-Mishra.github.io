@@ -34,7 +34,7 @@ export const research = [
     ],
     planet: 'jupiter',
     location: 'Long-read SVs',
-    readme: 'Haplotype-aware structural-variant genotyper for long-read data (HP-tagged BAM + VCF). Provides haplotype genotype calls (0|1,1|0,1|1,./.), GQ scoring, per-chrom multiprocessing, CLI and Python API; injects HP_GT/HP_GQ/HP_GQBIN into VCF.',
+    readme: 'Haplotype-aware structural-variant genotyper optimized for high-throughput long-read genomic data. Features per-chromosome parallel processing and CLI/Python API for scalable bioinformatics workflows. Designed for production pipelines processing 30x+ coverage whole-genome sequencing with VCF output.',
     tags: ['Genomics', 'Python', 'CLI']
   },
   {
@@ -110,7 +110,7 @@ export const experience = [
   },
   {
     role: 'DevOps Intern', org: 'University of Pitești, Romania', location: 'Remote', dates: 'Aug 2021 – Sep 2021', bullets: [
-      'Practiced GitLab/Git workflows and basic DevOps; standardized branching and reviews.'
+      'Git workflows, branching strategies, and code review processes.'
     ]
   }
 ];
@@ -285,8 +285,7 @@ export const skills = {
       { name: 'MLflow', level: 'proficient' },
       { name: 'Docker', level: 'proficient' },
       { name: 'Conda', level: 'proficient' },
-      { name: 'Linux', level: 'proficient' },
-      { name: 'Kubernetes', level: 'learning' }
+      { name: 'Linux', level: 'proficient' }
     ]
   },
   data: {
